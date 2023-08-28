@@ -4,6 +4,14 @@
   "version": "1.0",
   "description": "Cybersecurity tool that detects whether a URL is benign or malicious using a KNN model with 96.77% accuracy.",
 
+  "content_scripts": [
+		{
+			"js": ["background/content.js"],
+			"matches": ["https://*"],
+			"run_at": "document_start"
+		}
+  ],
+
   "action": {
     "default_popup": "hello.html",
     "default_icon": "images/icon16.png"
