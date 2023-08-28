@@ -10,4 +10,14 @@
     "48": "images/icon48.png",
     "128": "images/icon128.png"
   },
+
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": [
+        "https://developer.chrome.com/docs/extensions/*",
+        "https://developer.chrome.com/docs/webstore/*"
+      ]
+    }
+  ]
 }
