@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Run - URL Threat Analyzer</title>
+        <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="static/assets/lock.png" />
+      
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="static/css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+<!-- Responsive navbar-->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container px-lg-5">
+              <a class="navbar-brand" href="/">URL Threat Analyzer</a>
+      
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                      <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Run</a></li>
+                      <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                      <!-- <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li> -->
+                  </ul>
+              </div>
+          </div>
+      </nav>
+        <!-- Header-->
+        <header class="py-5">
+            <div class="container px-lg-5">
+                <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+                    <div class="m-4 m-lg-5">
+                        <h1 class="display-5 fw-bold">URL Threat Analyzer</h1>
+                        <p class="fs-4">This revolutionary cybersecurity tool can help you detect whether a URL is benign or malicious, with more then a 96% accuracy rate using the KNN model.</p>
+                      <div class="container px-lg-5">
+            <!-- URL Input -->
+            <form action="{{ url_for('printFunction')}}" method="post">
+            <div class="mb-3">
+                <input type="text" class="form-control" name="urlInput" id="urlInput" placeholder="Enter URL here">
+            </div>
+            <p> {{ result }} </p>
+            <button class="btn btn-primary" id="analyzeButton" type="submit" value="Submit">Analyze</button>
+            </form>
+            
+            <!-- ... -->
+        </div>
+                        <!-- <a class="btn btn-primary btn-lg" href="#!">Call to action</a> -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Page Content-->
+        <section class="pt-4">
+            <div class="container px-lg-5">
+                <!-- Team Introduction -->
+    <section class="py-5">
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Team Introduction</h2>
+                    <p class="card-text">This project was executed by Ben Chen and Otto Thomsen in August 2023, with the aim of assisting users in preemptively identifying malicious websites. The project's goals included enabling users to classify URLs prior to accessing websites, thereby enhancing users' cybersecurity and countering red-team cyber operations. For more information about us, please visit the about page.
+</p>
+                     <a class="btn btn-primary btn-lg"  href="/about">Learn More</a> 
+                  <!-- <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+ -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Explanation of Tech Stack</h2>
+                <p class="card-text">
+                    We utilized two datasets from the <a href="https://www.unb.ca/cic/datasets/url-2016.html" target="_blank">Canadian Institute of Cybersecurity</a>: 11,556 Malicious URLs and 35,378 Benign URLs.
+                    <br><br>
+                    Our tech stack includes a variety of tools and technologies:
+                    <ul>
+                        <li>Python for scripting and programming.</li>
+                        <li>Google Colab and Replit for collaborative coding environments.</li>
+                        <li>Word2Vec for word embedding.</li>
+                        <li>NLTK for text tokenization.</li>
+                        <li>Pandas for data manipulation and analysis.</li>
+                        <li>HuggingFace for model uploading and sharing.</li>
+                        <li>HTML, CSS, and JavaScript for frontend development.</li>
+                        <li>Flask for creating the backend web application.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Timeline with Arrow Diagram -->
+<section class="py-5">
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Timeline</h2>
+                <div class="timeline-arrow"></div>
+                <p class="card-text">
+                    Our project timeline consisted of the following key steps:
+                </p>
+                <ul class="timeline-list">
+                    <li>
+                        <strong>First week:</strong> Formed ideas, gathered datasets, cleaned the data, and added features.
+                        <div class="sub-box">
+                            <p>During the initial week, we brainstormed ideas, sourced datasets from reputable sources like the Canadian Institute of Cybersecurity, and performed data preprocessing. We added essential features to prepare the data for modeling.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Second week:</strong> Completed the KNN model, trained the model, and created this website.
+                        <div class="sub-box">
+                            <p>In the second week, we built and fine-tuned the KNN model to achieve high accuracy. After successful training, we developed this website as a user-friendly interface to our model.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Third week:</strong> Developed the Chrome extension version and published it.
+                        <div class="sub-box">
+                            <p>In the final week, we extended our project's reach by developing a Chrome extension version of our tool. We thoroughly tested it and published it for broader user accessibility.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Demo + Explanation -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Demo + Explanation</h2>
+                <p class="card-text">
+                    In our project, we harnessed various features to predict whether a given URL is malicious or benign. These features included:
+                </p>
+                <ul>
+                    <li>URL characteristics like scheme, netloc, path, params, query, and fragment lengths.</li>
+                    <li>Presence of keywords associated with malware, phishing, attacks, and hacking attempts.</li>
+                </ul>
+                <p>
+                    Our process for creating the classification model involved the following steps:
+                </p>
+                <ol>
+                    <li>Merging two dataframes: We combined the datasets containing malicious and benign URLs.</li>
+                    <li>Data Cleaning: We performed cleaning to ensure consistency and reliability of data.</li>
+                    <li>Data Preprocessing: Features were transformed and normalized for effective model training.</li>
+                    <li>Splitting Data: We divided the dataset into features (X) and the target (y).</li>
+                    <li>Feature Selection: We used the aforementioned features to predict the target column "malicious".</li>
+                    <li>Train-Test Split: The dataset was split into training and testing sets using the "train_test_split" function.</li>
+                    <li>Model Training: We utilized various sklearn models for training.</li>
+                    <li>Evaluation: Models were evaluated using relevant metrics to assess their performance.</li>
+                </ol>
+                <p>
+                    Our KNN model, with neighbors set to 3, achieved an accuracy rate of approximately 96.77%.
+                </p>
+                <p>
+                    Our project's ultimate goal was to provide users with a reliable tool to distinguish between malicious and benign URLs, thereby enhancing cybersecurity.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+        </section>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">A Project By Ben Chen & Otto Thomsen, 2023.</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+          <script>
+        document.getElementById("analyzeButton").addEventListener("click", function () {
+            var urlInput = document.getElementById("urlInput");
+            var url = urlInput.value;
+            
+            if (!url.startsWith("https://")) {
+                url = "https://" + url;
+            }
+
+            // Now you can use the 'url' for further processing, e.g. redirecting to the URL.
+            // For now, let's just log the URL to the console.
+            console.log("Analyze URL:", url);
+        });
+    </script>
+    </body>
+</html>
