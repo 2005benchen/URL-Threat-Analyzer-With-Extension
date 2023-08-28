@@ -3,4 +3,11 @@
   "name": "URL-Threat-Analyzer-With-Extension",
   "version": "1.0",
   "description": "Cybersecurity tool that detects whether a URL is benign or malicious using a KNN model with 96.77% accuracy."
+
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
 }
