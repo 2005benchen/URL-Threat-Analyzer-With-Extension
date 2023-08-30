@@ -3,9 +3,9 @@
   "name": "URL Checker",
   "description": "Check if a URL is malicious or benign.",
   "version": "1.0",
-  "permissions": ["activeTab"],
+  "permissions": ["activeTab", "tabs", "https://super02.me/*"],
   "browser_action": {
-    "default_popup": "hello.html",
+    "default_popup": "index.html",
     "default_icon": {
       "16": "images/icon16.png",
       "32": "images/icon32.png",
@@ -13,19 +13,13 @@
       "128": "images/icon128.png"
     }
   },
-  "background": {
-    "scripts": ["background.js"],
-    "persistent": false
-  },
   "icons": {
     "16": "images/icon16.png",
     "32": "images/icon32.png",
     "48": "images/icon48.png",
     "128": "images/icon128.png"
   },
-  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "web_accessible_resources": [
-    "static/assets/model.sav",
-    "hello.html"
+    "index.html"
   ]
 }
