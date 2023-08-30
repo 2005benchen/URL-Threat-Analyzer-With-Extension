@@ -1,10 +1,15 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "URL Checker",
   "description": "Check if a URL is malicious or benign.",
   "version": "1.0",
-  "permissions": ["activeTab", "tabs", "https://super02.me/*"],
-  "browser_action": {
+  "permissions": [
+    "activeTab"
+  ],
+  "host_permissions": [
+      "*://super02.me/*"
+  ],
+  "action": {
     "default_popup": "index.html",
     "default_icon": {
       "16": "images/icon16.png",
@@ -20,6 +25,9 @@
     "128": "images/icon128.png"
   },
   "web_accessible_resources": [
-    "index.html"
+    {
+      "resources": ["index.html"],
+      "matches": ["<all_urls>"]
+    }
   ]
 }
